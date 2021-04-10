@@ -340,3 +340,5 @@ ASALocalRun/
 healthchecksdb
 
 SpotifyAdBlocker-Windows/extern
+
+compile_commands.json
