@@ -12,7 +12,7 @@ Prerequisites:
 --------------------
 
   * Clone this repo
-  * download `https://cef-builds.spotifycdn.com/cef_binary_89.0.18%2Bgb36241d%2Bchromium-89.0.4389.114_windows32_minimal.tar.bz2` and unzip the `include` folder to `SpotifyAdBlocker-Windows\extern` folder
+  * download [Chromium Embedded Framework](https://cef-builds.spotifycdn.com/cef_binary_89.0.18%2Bgb36241d%2Bchromium-89.0.4389.114_windows32_minimal.tar.bz2) and unzip the `include` folder to `SpotifyAdBlocker-Windows\extern` folder
   * open `SpotifyAdBlocker-Windows.sln`
   * build the project (of course after you take a look at what's going on there to make sure no nasty thing is happening :p )
   * locate where is the output libcef.dll, it should be in `$(SolutionDir)bin\$(Platform)\$(Configuration)\`
