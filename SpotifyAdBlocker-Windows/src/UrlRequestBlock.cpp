@@ -5,6 +5,8 @@
 #include <regex>
 #include <vector>
 #include <stdexcept>
+#include <ranges>
+#include <string_view>
 
 #ifdef _DEBUG
 #include <cstdio>
@@ -33,22 +35,15 @@ extern "C" {
 		L"https://spclient.wg.spotify.com/gabo-receiver-service/", // tracking
 	};
 
-	bool IsBlackListed(std::wstring& url)
+	bool IsBlackListed(const std::wstring_view& url)
 	{
-		for (auto pattern : black_list)
-		{
-			bool isBlackListed = true;
-			for (int i = 0; i < pattern.length(); i++)
-			{
-				if (pattern[i] != url[i])
-				{
-					isBlackListed = false;
-					break;
-				}
-			}
-			if (isBlackListed) return true;
-		}
-		return false;
+		auto prefix = [&](const std::wstring_view& pattern) {
+			auto res = std::ranges::mismatch(pattern, url);
+			return res.in1 == pattern.end();
+		};
+		
+		auto result = black_list | std::views::filter(prefix);
+		return !std::ranges::empty(result);
 	}
 
 
