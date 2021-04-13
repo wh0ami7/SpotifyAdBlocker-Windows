@@ -3,7 +3,7 @@
 This project is a try to port [This one](https://github.com/abba23/spotify-adblock-linux) to windows
 the way it is done is with dll redirection, the call to `cef_urlrequest_create` is traited with a custom function that blocks urls that are blacklisted, and it redirects the good URLs to the original function.
 
-## Build
+## Build from source
 
 Prerequisites:
 
@@ -19,7 +19,11 @@ Prerequisites:
   * open Spotify folder, it should be in `%appdata%\Spotify`, or if you have a shortcut, then right click it and click on `Open File Location`
   * rename the `libcef.dll` in that folder to `libcefNative.dll`
   * move or copy the `libcef.dll` that you just compiled into the `Spotify` folder
-  
+
+## Use the precompiled dll
+
+  * download the latest stable release of SpotifyAdBlocker-x86.zip and unzip it.
+  * follow steps in the readme.txt file.
 
 ### looks like you are done now! open Spotify and enjoy your music without ads.
 
