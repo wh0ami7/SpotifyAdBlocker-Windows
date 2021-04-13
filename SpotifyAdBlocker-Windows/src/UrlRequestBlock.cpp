@@ -37,13 +37,11 @@ extern "C" {
 
 	bool IsBlackListed(const std::wstring_view& url)
 	{
-		auto prefix = [&](const std::wstring_view& pattern) {
+		auto is_prefix = [&](const std::wstring_view& pattern) {
 			auto res = std::ranges::mismatch(pattern, url);
 			return res.in1 == pattern.end();
 		};
-		
-		auto result = black_list | std::views::filter(prefix);
-		return !std::ranges::empty(result);
+		return !std::ranges::empty(black_list | std::views::filter(is_prefix));
 	}
 
 
