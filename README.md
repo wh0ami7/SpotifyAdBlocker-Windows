@@ -25,6 +25,9 @@ Prerequisites:
   * download the latest stable release of SpotifyAdBlocker-x86.zip and unzip it.
   * follow steps in the readme.txt file.
 
+## alternatively
+  * you can download the Setup batch script from [here](https://github.com/Lyceris-chan/Spotify-adblock) which automatically does the previous steps for you!
+
 ### looks like you are done now! open Spotify and enjoy your music without ads.
 
 ## TODO:
